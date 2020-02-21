@@ -1,2 +1,13 @@
-<h1>Cocktails#show</h1>
-<p>Find me in app/views/cocktails/show.html.erb</p>
+<h1>Cocktail details</h1>
+
+<p>
+  <strong>Name:</strong>
+  <%= @cocktail.name %>
+</p>
+
+<span>
+  <p><%= link_to 'Insert Dose', new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %></p>
+</span>
+
+
+<p><%= link_to 'Back', cocktails_path, class: "btn btn-info" %></p>

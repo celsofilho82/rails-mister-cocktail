@@ -12,7 +12,7 @@
     <% @cocktails.each do |cocktail| %>
       <tr>
         <td><%= cocktail.name %></td>
-        <td><%= link_to 'Show', cocktail_path(cocktail) %></td>
+        <td><%= link_to 'Show', cocktail_path(cocktail), class: "btn btn-success" %></td>
       </tr>
     <% end %>
   </tbody>
