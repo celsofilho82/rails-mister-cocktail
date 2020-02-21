@@ -5,9 +5,27 @@
   <%= @cocktail.name %>
 </p>
 
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Ingredient</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%@cocktail.doses.each do |dose|%>
+      <tr>
+        <td><%= dose.description %></td>
+        <td><%= dose.ingredient.name %></td>
+        <td><%= link_to 'Remove', dose_path(dose.id), class: "btn btn-danger", method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <span>
   <p><%= link_to 'Insert Dose', new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %></p>
 </span>
-
 
 <p><%= link_to 'Back', cocktails_path, class: "btn btn-info" %></p>
