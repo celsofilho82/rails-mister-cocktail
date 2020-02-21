@@ -1,5 +1,6 @@
 class CocktailsController < ApplicationController
   def index
+    @cocktails = Cocktail.all
   end
 
   def new
@@ -9,5 +10,6 @@ class CocktailsController < ApplicationController
   end
 
   def show
+    @cocktail = Cocktail.find(params[:id])
   end
 end
